@@ -1,4 +1,4 @@
-// RECUPERO ELEMENTI UTILI DALL'HTML
+// RECUPERO ELEMENTI HTML
 
 const daysInput = document.getElementById("days");
 const hoursInput = document.getElementById("hours");
@@ -7,42 +7,39 @@ const secondsInput = document.getElementById("seconds");
 
 // RECUPERO ORE, MINUTI, SECONDI
 
-const dateToday = new Date ();
+// MILLISECONDI ODIERNI
 
+const dateToday = new Date();
 let timeNow = dateToday.getTime();
 
-const tomorrow = new Date (2023, 7, 24, 9, 30);
+// MILLISECONDI DOMANI 9:30
 
+const tomorrow = new Date(2023, 7, 24, 9, 30);
 let timeTomorrow = tomorrow.getTime();
+
+// DIFFERENZA FRA I DUE NUMERI
 
 let timeMissing = timeTomorrow - timeNow;
 
-const countdown = setInterval(function () {
-
-    timeMissing = timeMissing - 1000;
-
-} , 1000 );
-
+// VARIABILI CHE RACCOLGONO I DATI INTERI
 
 let hours = Math.floor(timeMissing / (1000 * 60 * 60));
 
-console.log(hours);
 
-let mnts = timeMissing % (1000 * 60 * 60) / (1000 * 60);
+let minutes = Math.floor(timeMissing % (1000 * 60 * 60) / (1000 * 60));
 
-console.log(mnts);
 
-let scnds = timeMissing % (1000 * 60 * 60) % (1000 * 60) / 1000;
+let seconds = Math.floor(timeMissing % (1000 * 60 * 60) % (1000 * 60) / 1000);
 
-console.log(scnds);
 
-// let scnd = Math.floor(timeMissing / 1000);
-// let mnt = scnd / 60;
-// let hrs = Math.floor(mnt / 60);
-// console.log(scnd, mnt, hrs);
+// SETTAGGIO COUNTDOWN
 
-// console.log(timeNow);
+setInterval(function () {
 
-// console.log(timeTomorrow);
+    seconds -- ;
+    hoursInput.innerText = hours
+    minutesInput.innerText = minutes;
+    secondsInput.innerText = seconds;
+}, 1000);
 
-// console.log(timeMissing);
+clearInterval(tomorrow);
