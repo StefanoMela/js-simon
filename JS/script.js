@@ -25,11 +25,27 @@ let timeMissing = timeTomorrow - timeNow;
 
 let hours = Math.floor(timeMissing / (1000 * 60 * 60));
 
-
 let minutes = Math.floor(timeMissing % (1000 * 60 * 60) / (1000 * 60));
 
-
 let seconds = Math.floor(timeMissing % (1000 * 60 * 60) % (1000 * 60) / 1000);
+
+/**
+ *  METODI ALTERNATIVI: 
+ * 
+ *  const sToTomorrow =  Math.floor((timeMissing / 1000))
+ * 
+ *  const seconds = sToTomorrow % 60;
+ * 
+ *  const minutes = Math.floor((sToTomorrow / 60) % 60); => la prima divisione è per recuperare l'unità di misura, 
+ *                                              il resto è per recuperare i 60 minuti in un'ora
+ *
+ * const hours = Math.floor((sToTomorrow / 60 / 60) % 24);
+ * 
+ * const days = Math.floor(sToTomorrow / 60 / 60 / 24); 
+ * 
+*/
+
+
 
 
 // SET VARIABILE APPOGGIO
@@ -48,7 +64,7 @@ setInterval(function () {
     
 }, 1000);
 
-if (Jhour == tomorrow) {
+if (Jhour =          = tomorrow) {
 
     clearInterval()
 };
