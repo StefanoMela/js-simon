@@ -32,6 +32,11 @@ let minutes = Math.floor(timeMissing % (1000 * 60 * 60) / (1000 * 60));
 let seconds = Math.floor(timeMissing % (1000 * 60 * 60) % (1000 * 60) / 1000);
 
 
+// SET VARIABILE APPOGGIO
+
+let Jhour = tomorrow
+
+
 // SETTAGGIO COUNTDOWN
 
 setInterval(function () {
@@ -40,6 +45,10 @@ setInterval(function () {
     hoursInput.innerText = hours
     minutesInput.innerText = minutes;
     secondsInput.innerText = seconds;
+    
 }, 1000);
 
-clearInterval(tomorrow);
+if (Jhour == tomorrow) {
+
+    clearInterval()
+};
